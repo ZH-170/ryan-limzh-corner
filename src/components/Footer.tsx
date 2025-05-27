@@ -4,7 +4,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="flex h-80 flex-col gap-5 bg-white p-10 md:h-50 md:flex-row md:gap-20 md:px-20 lg:px-30">
+    <footer className="flex h-80 flex-col gap-5 bg-white p-10 md:h-50 md:flex-row md:gap-20 md:px-20 lg:px-30 inset-shadow-2xs inset-shadow-black">
       <div className="flex flex-col items-center justify-center md:flex-1">
         <Image
           src="envelope-regular.svg"
@@ -15,7 +15,7 @@ function Footer() {
         />
         <p>zihenglim0710@gmail.com</p>
       </div>
-      <div className="flex flex-col items-center justify-center gap-3 md:flex-2 md:flex-row md:gap-10">
+      <div className="flex flex-col items-left sm:items-center justify-center gap-3 md:flex-2 md:flex-row md:gap-10">
         <Link href="https://www.instagram.com/zh_ziheng/" target="_blank">
           <div className="flex flex-row items-center gap-3 md:flex-col md:gap-1">
             <Image
