@@ -8,7 +8,7 @@ export default function Home() {
       <h1>Hello World!</h1>
       <h1>Hello World!</h1>
       <h1>Hello World!</h1>
-      <Link href="abc.pdf">
+      <Link href="robots.pdf">
         <span className="text-blue-600 underline hover:text-blue-800">
           View My Result (PDF)
         </span>
