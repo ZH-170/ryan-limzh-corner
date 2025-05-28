@@ -20,6 +20,7 @@ export default function SeqMem() {
     "bg-white",
     "bg-white",
   ]);
+  const [disableClick, setDisableClick] = useState(false);
 
   let n = 1;
   let seq: number[] = [];
@@ -35,10 +36,12 @@ export default function SeqMem() {
       ansList.current = [];
 
       seq.push(new_n);
+
+      setDisableClick(true);
       await showSeq(seq);
+      setDisableClick(false);
 
       await delay(1000);
-
       while (ansList.current.length < seq.length) {
         await delay(500);
       }
@@ -70,23 +73,24 @@ export default function SeqMem() {
   }
 
   async function showSeq(seq: number[]) {
-    await delay(1000);
+    await delay(500);
     for (let i = 0; i < seq.length; i++) {
       const newGridColor = [...gridColor];
       const preGridColor = [...gridColor];
 
       newGridColor[seq[i]] = "bg-black";
 
+      // await delay(500);
       setGridColor(newGridColor);
-      await delay(500);
 
-      setGridColor(preGridColor);
       await delay(500);
+      setGridColor(preGridColor);
     }
   }
 
   return (
     <div className="flex h-100 items-center justify-center">
+      {disableClick && (<div className="w-full h-120 opacity-0 absolute"></div>)}
       {showSuccessResult && (
         <div className="absolute mx-10 my-10 flex aspect-square w-4/5 max-w-110 flex-col items-center justify-center border-2 bg-white">
           <h1 className="text-xl font-bold sm:text-4xl">You got it!</h1>
