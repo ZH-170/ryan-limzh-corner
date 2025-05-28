@@ -4,25 +4,25 @@ export default function Games() {
   return (
     <div className="flex flex-col gap-5">
       <Link
-        href="/project/games/seq-mem"
+        href="/project/games/sequence-memory"
         className="mx-10 flex h-20 items-center justify-center rounded-lg border-2"
       >
         <div>Sequence Memory</div>
       </Link>
       <Link
-        href="/project/games/num-mem"
+        href="/project/games/visual-memory"
         className="mx-10 flex h-20 items-center justify-center rounded-lg border-2"
       >
-        <div>Numer Memory</div>
+        <div>Visual Memory</div>
       </Link>{" "}
       <Link
-        href="/project/games/seq-mem"
+        href="/project/games/sequence-memory"
         className="mx-10 flex h-20 items-center justify-center rounded-lg border-2"
       >
         <div>Sequence Memory</div>
       </Link>{" "}
       <Link
-        href="/project/games/seq-mem"
+        href="/project/games/sequence-memory"
         className="mx-10 flex h-20 items-center justify-center rounded-lg border-2"
       >
         <div>Sequence Memory</div>

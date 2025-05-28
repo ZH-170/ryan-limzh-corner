@@ -1,3 +1,3 @@
-export default function NumMem() {
+export default function VisualMemory() {
   return <div>Will be continue...</div>;
 }

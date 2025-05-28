@@ -1,7 +1,7 @@
-export default function About() {
+export default function Contact() {
   return (
     <>
-      <h1>This is an About me Page!</h1>
+      <h1>This is an Contact me Page!</h1>
     </>
   );
 }
