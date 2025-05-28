@@ -93,7 +93,7 @@ export default function SeqMem() {
         <div className="absolute mx-10 my-10 flex aspect-square w-4/5 max-w-110 flex-col items-center justify-center border-2 bg-white">
           <h1 className="text-xl font-bold sm:text-4xl">You got it!</h1>
           <h2 className="text-md sm:text-2xl">
-            Let`&apos;`s jump into the next level!
+            Let&apos;s jump into the next level!
           </h2>
         </div>
       )}
@@ -125,7 +125,7 @@ export default function SeqMem() {
             Start
           </button>
           <h1 className="sm:text-md text-sm">
-            First, memorize the sequence of the blocks `&quot;`glows`&quot;` in.
+            First, memorize the sequence of the blocks &quot;glow&quot; in.
             Then, click the box with the correct sequence.
           </h1>
         </div>
