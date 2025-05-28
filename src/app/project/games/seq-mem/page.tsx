@@ -30,8 +30,6 @@ export default function SeqMem() {
     n = 1;
     seq = [];
 
-    await delay(1000);
-
     while (true) {
       const new_n = Math.floor(Math.random() * 9);
       ansList.current = [];
