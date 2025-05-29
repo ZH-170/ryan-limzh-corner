@@ -42,16 +42,22 @@ export default function SequenceMemory() {
       setDisableClick(false);
 
       await delay(1000);
-      while (ansList.current.length < seq.length) {
-        await delay(500);
-      }
 
       let is_valid = true;
-      for (let i = 0; i < n; i++) {
-        if (ansList.current[i] != seq[i]) {
-          is_valid = false;
-          break;
+      let i = 0;
+
+      while (ansList.current.length <= seq.length) {
+        if (ansList.current.length > i) {
+          if (ansList.current[i] !== seq[i]) {
+            is_valid = false;
+            break;
+          }
+          i++;
+          if (i === seq.length) {
+            break;
+          }
         }
+        await delay(100);
       }
 
       if (!is_valid) {
@@ -73,24 +79,24 @@ export default function SequenceMemory() {
   }
 
   async function showSeq(seq: number[]) {
-    await delay(500);
+    // await delay(500);
     for (let i = 0; i < seq.length; i++) {
       const newGridColor = [...gridColor];
       const preGridColor = [...gridColor];
 
       newGridColor[seq[i]] = "bg-black";
 
-      // await delay(500);
+      await delay(300);
       setGridColor(newGridColor);
 
-      await delay(500);
+      await delay(300);
       setGridColor(preGridColor);
     }
   }
 
   return (
     <div className="flex h-100 items-center justify-center">
-      {disableClick && (<div className="w-full h-120 opacity-0 absolute"></div>)}
+      {disableClick && <div className="absolute h-120 w-full opacity-0"></div>}
       {showSuccessResult && (
         <div className="absolute mx-10 my-10 flex aspect-square w-4/5 max-w-110 flex-col items-center justify-center border-2 bg-white">
           <h1 className="text-xl font-bold sm:text-4xl">You got it!</h1>
@@ -105,7 +111,7 @@ export default function SequenceMemory() {
             You are almost there!
           </h1>
           <h2 className="text-md sm:text-2xl">
-            Your final level: Level {level}
+            Your highest level: Level {level}
           </h2>
           <button
             onClick={() => window.location.reload()}
@@ -141,7 +147,7 @@ export default function SequenceMemory() {
           <div className="grid aspect-square w-full grid-cols-3 grid-rows-3 gap-1 rounded-lg p-3 sm:gap-3 sm:p-5">
             {list_of_grids.map((item) => (
               <div
-                className={`${gridColor[item]} rounded-lg border-2 transition delay-10 ease-in-out active:bg-[#505050]`}
+                className={`${gridColor[item]} rounded-lg border-2 transition delay-10 ease-in-out active:bg-[#000000]`}
                 onClick={() => {
                   const ans_list = [...ansList.current, item];
                   ansList.current = ans_list;
