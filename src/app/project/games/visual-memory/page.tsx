@@ -85,6 +85,7 @@ export default function VisualMemory() {
   async function showAns(seq: boolean[]) {
     const oriSeq = [...isFlipped];
     setIsFlipped(seq);
+    playSound();
     await delay(1000);
     setIsFlipped(oriSeq);
     await delay(200);
@@ -237,7 +238,13 @@ export default function VisualMemory() {
           <div
             className={`grid aspect-square w-full ${colSize} ${rowSize} rounded-lg p-3 ${gap} sm:p-5`}
           >
-            <audio preload="auto" src="/VisMemFlip/smallClick.mp3" ref={(el) => {if (el) flipSoundRef.current=el;}} />
+            <audio
+              preload="auto"
+              src="/VisMemFlip/smallClick.mp3"
+              ref={(el) => {
+                if (el) flipSoundRef.current = el;
+              }}
+            />
             {gridList.map((item) => (
               <button
                 type="button"

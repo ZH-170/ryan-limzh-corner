@@ -41,12 +41,13 @@ export default function SequenceMemory() {
     seq = [];
 
     while (true) {
+      setDisableClick(true);
+
       const new_n = Math.floor(Math.random() * 9);
       ansList.current = [];
 
       seq.push(new_n);
 
-      setDisableClick(true);
       await showSeq(seq);
       setDisableClick(false);
 
@@ -94,8 +95,9 @@ export default function SequenceMemory() {
       const preGridColor = [...gridColor];
 
       newGridColor[seq[i]] = "bg-black";
-
+      playSound(seq[i]);
       await delay(300);
+
       setGridColor(newGridColor);
 
       await delay(300);
@@ -107,7 +109,7 @@ export default function SequenceMemory() {
     <div className="flex h-100 items-center justify-center">
       {disableClick && <div className="absolute h-120 w-full opacity-0"></div>}
       {showSuccessResult && (
-        <div className="absolute mx-10 my-10 flex aspect-square w-4/5 max-w-110 flex-col items-center justify-center border-2 bg-white">
+        <div className="absolute mx-10 my-10 flex aspect-square w-5/6 max-w-110 flex-col items-center justify-center border-2 bg-white">
           <h1 className="text-xl font-bold sm:text-4xl">You got it!</h1>
           <h2 className="text-md sm:text-2xl">
             Let&apos;s jump into the next level!
@@ -115,7 +117,7 @@ export default function SequenceMemory() {
         </div>
       )}
       {showFailResult && (
-        <div className="absolute mx-10 my-10 flex aspect-square w-4/5 max-w-110 flex-col items-center justify-center border-2 bg-white">
+        <div className="absolute mx-10 my-10 flex aspect-square w-5/6 max-w-110 flex-col items-center justify-center border-2 bg-white">
           <h1 className="text-xl font-bold sm:text-4xl">
             You are almost there!
           </h1>
@@ -167,8 +169,9 @@ export default function SequenceMemory() {
             {list_of_grids.map((item) => (
               <div
                 className={`${gridColor[item]} rounded-lg border-2 transition delay-10 ease-in-out active:bg-[#000000]`}
-                onClick={() => {
+                onClick={async () => {
                   playSound(item);
+                  await delay(500);
                   const ans_list = [...ansList.current, item];
                   ansList.current = ans_list;
                 }}
