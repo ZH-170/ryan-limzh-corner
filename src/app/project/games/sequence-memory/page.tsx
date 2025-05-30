@@ -5,6 +5,15 @@ import { useState, useRef } from "react";
 export default function SequenceMemory() {
   const list_of_grids = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
+  const clickSoundRef = useRef<HTMLAudioElement[]>([]);
+  const playSound = (x: number) => {
+    const sound = clickSoundRef.current[x];
+    if (sound) {
+      sound.currentTime = 0;
+      sound.play();
+    }
+  };
+
   const [gameStart, setGameStart] = useState(false);
   const [level, setLevel] = useState(1);
   const [showSuccessResult, setShowSuccessResult] = useState(false);
@@ -145,10 +154,21 @@ export default function SequenceMemory() {
             <h1 className="text-2xl">Level {level}</h1>
           </div>
           <div className="grid aspect-square w-full grid-cols-3 grid-rows-3 gap-1 rounded-lg p-3 sm:gap-3 sm:p-5">
+            {[...Array(9)].map((_, i) => (
+              <audio
+                key={i}
+                preload="auto"
+                src={`/SeqMemButtonClick/SM${i + 1}.mp3`}
+                ref={(el) => {
+                  if (el) clickSoundRef.current[i] = el;
+                }}
+              />
+            ))}
             {list_of_grids.map((item) => (
               <div
                 className={`${gridColor[item]} rounded-lg border-2 transition delay-10 ease-in-out active:bg-[#000000]`}
                 onClick={() => {
+                  playSound(item);
                   const ans_list = [...ansList.current, item];
                   ansList.current = ans_list;
                 }}

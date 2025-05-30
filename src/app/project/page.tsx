@@ -7,13 +7,13 @@ export default function Project() {
         href="/project/games"
         className="flex h-50 items-center justify-center rounded-lg border-2 sm:mx-20 md:mx-40 lg:mx-60 xl:mx-80"
       >
-        <div>Games</div>
+        <div>Little Website Games</div>
       </Link>
       <Link
-        href="/project/games"
+        href="/project/other-projects"
         className="flex h-50 items-center justify-center rounded-lg border-2 sm:mx-20 md:mx-40 lg:mx-60 xl:mx-80"
       >
-        <div>Games</div>
+        <div>other projects</div>
       </Link>
     </div>
   );
