@@ -170,11 +170,7 @@ export default function VisualMemory() {
         await delay(1000);
         setShowSuccessResult(false);
       }
-
-      if (N == 6) {
-        break;
-      }
-
+      
       // --- --- --- --- ---
     }
   }
