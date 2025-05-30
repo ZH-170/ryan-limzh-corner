@@ -143,7 +143,7 @@ export default function VisualMemory() {
             break;
           }
         }
-        await delay(500);
+        await delay(100);
       }
 
       if (!is_valid) {
