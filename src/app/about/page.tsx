@@ -10,7 +10,7 @@ export default function About() {
     <p>And maybe this is the reason for a &quot;multitalented&quot; me.</p>
     <br />
     <p>So, to not waste time, here are some tags about the fields I am currently playing in, and I have been struggling and improving in some subfields of those specific field.</p>
-    <p>#computerscience-cp #art-watercolor #music-piano&erhu #naturalscience</p>
+    <p>#computerscience-cp-webdev-ai #art-watercolor #music-piano-erhu #naturalscience</p>
     <br />
     <p> If you really want to know more about me (or you don&apos;t believe in any single one of the tags), feel free to check my social media accounts below.</p>
     <br />
