@@ -16,7 +16,7 @@ function Footer() {
         <p>zihenglim0710@gmail.com</p>
       </div>
       <div className="items-left flex flex-col justify-center gap-3 sm:items-center md:flex-2 md:flex-row md:gap-10">
-        <Link href="https://www.instagram.com/zh_ziheng/" target="_blank">
+        <Link href="https://www.instagram.com/ryan_zihenglim/" target="_blank">
           <div className="flex flex-row items-center gap-3 md:flex-col md:gap-1">
             <Image
               src="/square-instagram-brands.svg"
@@ -25,7 +25,7 @@ function Footer() {
               width={7}
               height={7}
             />
-            <p>zh_ziheng</p>
+            <p>ryan_zihenglim</p>
           </div>
         </Link>
         <Link href="https://www.facebook.com/zi.h.lim" target="_blank">
