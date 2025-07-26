@@ -5,7 +5,7 @@ export default function Home() {
 
   return (
     <div className="h-dvh flex items-center justify-center">
-{showPDF && (      <Link href="robots.pdf">
+      {showPDF && (      <Link href="robots.pdf">
         <span className="text-blue-600 underline hover:text-blue-800">
           Mystery pdf (PDF)
         </span>
