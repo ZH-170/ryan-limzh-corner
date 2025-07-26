@@ -5,12 +5,6 @@ import { Highlight, themes } from "prism-react-renderer";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 
-type CodeProps = {
-  inline?: boolean;
-  className?: string;
-  children: React.ReactNode;
-};
-
 export default function MarkdownRenderer({ content }: { content: string }) {
   return (
     <ReactMarkdown
@@ -30,7 +24,7 @@ export default function MarkdownRenderer({ content }: { content: string }) {
               code={String(children).replace(/\n$/, "")}
               language={language}
             >
-              {({ className, style, tokens, getLineProps, getTokenProps }) => (
+              {({ style, tokens, getLineProps, getTokenProps }) => (
                 <pre style={style} className="rounded-[5px] px-3 pb-3">
                   <p className="pointer-events-none pt-2 text-right text-[15px] select-none">
                     {language}
@@ -61,14 +55,14 @@ export default function MarkdownRenderer({ content }: { content: string }) {
             </code>
           );
         },
-        h1: ({ node, className, children, ...props }) => {
+        h1: ({ children, ...props }) => {
           return (
             <h1 className="text-2xl font-bold" {...props}>
               {children}
             </h1>
           );
         },
-        h2: ({ node, className, children, ...props }) => {
+        h2: ({ children, ...props }) => {
           return (
             <h2 className="text-xl font-bold" {...props}>
               {children}
