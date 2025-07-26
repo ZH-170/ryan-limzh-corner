@@ -160,7 +160,7 @@ export default function VisualMemory() {
         setIsFlipped(oriIsFlipped);
         await delay(1000);
 
-        if (n_cnt == Math.pow(2, N - 2)) {
+        if (n_cnt === Math.pow(2, N - 2)) {
           N++;
           n_cnt = 0;
           n_start++;
@@ -170,7 +170,7 @@ export default function VisualMemory() {
         await delay(1000);
         setShowSuccessResult(false);
       }
-      
+
       // --- --- --- --- ---
     }
   }
